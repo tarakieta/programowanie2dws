@@ -125,6 +125,49 @@ void task5()
 
 }
 
+//Program obliczaj¹cy pole trójk¹ta o podstawie b i wysokoœci h:
+void task6()
+{
+
+    double a, h, areaoftriangle;
+
+    
+    std::cout << "Podaj d³ugoœæ boku trójk¹ta: ";
+    std::cin >> a;
+    std::cout << "Podaj wysokoœæ trójk¹ta: ";
+    std::cin >> h;
+   
+    areaoftriangle = (a * h) /2;
+
+    std::cout << "Pole trojk¹ta wynosi: " << areaoftriangle << "\a";
+
+}
+
+//Program obliczaj¹cy objêtoœæ kuli o promieniu r:
+void task7()
+{
+
+    double r, volumeofthesphere;
+
+    float pi = 3.141;
+
+    std::cout << "Podaj r kuli: ";
+    std::cin >> r;
+
+    volumeofthesphere = (4 / 3) * (pi * r);
+
+    std::cout << "Objêtoœæ kuli wynosi: " << volumeofthesphere << "\n";
+
+}
+
+//Program obliczaj¹cy pole trapezu o podstawach a i b oraz wysokoœci h:
+void task8()
+{
+
+
+
+}
+
 int main()
 {
     setlocale(LC_CTYPE, "polish");
@@ -133,5 +176,9 @@ int main()
     //task2();
     //task3();
     //task4();
+    //task5();
+    //task6();
+    //task7();
+    task8();
 
 }
