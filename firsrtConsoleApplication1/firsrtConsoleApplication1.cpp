@@ -164,7 +164,16 @@ void task7()
 void task8()
 {
 
+    double a, b, h, areaoftrapezoid;
 
+    std::cout << "Podaj a: ";
+    std::cin >> a;
+    std::cout << "Podaj b";
+    std::cin >> b;
+    std::cout << "Podaj wysokoœæ: ";
+    std::cin >> h;
+
+    areaoftrapezoid = (a + b) * h/2;
 
 }
 
