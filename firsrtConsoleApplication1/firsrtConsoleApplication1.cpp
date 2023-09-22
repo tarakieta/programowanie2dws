@@ -1,5 +1,8 @@
 #define _USE_MATH_DEFINES
 #include <iostream>
+#include <math.h>
+#include <cmath>
+#define M_PI
 
 void test()
 {
@@ -60,7 +63,65 @@ void task2()
 
     double a, b;
 
-    std::cout << "Podaj ";
+    std::cout << "Podaj pierwszy bok: ";
+    std::cin >> a;
+    std::cout << "Podaj drugi bok: ";
+    std::cin >> b;
+
+    double areaofrectangle = (a * b);
+
+    std::cout << "Pole prostok¹ta wynosi: " << areaofrectangle << "\n";
+
+}
+
+//Program obliczaj¹cy objêtoœæ sto¿ka:
+void task3()
+{
+
+    double r, H, V;
+
+    float pi = 3.141;
+
+    std::cout << "Podaj promieñ: \n";
+    std::cin >> r;
+    std::cout << "Podaj wysokoœæ: \n";
+    std::cin >> H;
+
+    V = (pi * r * r) * (H / 3);
+
+    std::cout << "Objetosc wynosi: " << V;
+
+}
+
+//Program obliczaj¹cy pole ko³a:
+void task4()
+{
+
+    double r, areaofcircle;
+
+    float pi = 3.141;
+
+    std::cout << "Podaj promieñ ko³a: \n";
+    std::cin >> r;
+    
+    areaofcircle = (pi * r * r);
+
+    std::cout << "Pole ko³a wynosi: "<< areaofcircle <<"\n";
+
+}
+
+//Program obliczaj¹cy wartoœæ wyra¿enia a^2 + b^2:
+void task5()
+{
+
+    double a, b, answer;
+
+    std::cout << "Podaj a: ";
+    std::cin >> a;
+    std::cout << "Podaj b: ";
+    std::cin >> b;
+
+    answer = (a * a) + (b * b);
 
 }
 
@@ -68,6 +129,9 @@ int main()
 {
     setlocale(LC_CTYPE, "polish");
     //test();
-    task1();
+    //task1();
     //task2();
+    //task3();
+    //task4();
+
 }
