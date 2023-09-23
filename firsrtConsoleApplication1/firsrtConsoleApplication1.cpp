@@ -168,12 +168,39 @@ void task8()
 
     std::cout << "Podaj a: ";
     std::cin >> a;
-    std::cout << "Podaj b";
+    std::cout << "Podaj b: ";
     std::cin >> b;
     std::cout << "Podaj wysokoœæ: ";
     std::cin >> h;
 
     areaoftrapezoid = (a + b) * h/2;
+
+    std::cout << "Pole trapezu wynosi: " << areaoftrapezoid << "\n";
+
+}
+
+//Program obliczaj¹cy œredni¹ wa¿on¹ trzech liczb z podanymi odpowiednimi wagami w1, w2 i w3:
+void task9()
+{
+
+    double liczba1, liczba2, liczba3, w1, w2, w3;
+    
+    std::cout << "Podaj pierwsz¹ liczbe: ";
+    std::cin >> liczba1;
+    std::cout << "Podaj wage pierwszej liczby: ";
+    std::cin >> w1;
+    std::cout << "Podaj drug¹ liczbe: ";
+    std::cin >> liczba2;
+    std::cout << "Podaj wage drugiej liczby: ";
+    std::cin >> w2;
+    std::cout << "Podaj trzeci¹ liczbe: ";
+    std::cin >> liczba3;
+    std::cout << "Podaj wage trzeciej liczby: ";
+    std::cin >> w3;
+    
+    double œrednialiczb = (liczba1 * w1 + liczba2 * w2 + liczba3 * w3) / (w1 + w2 + w3);
+
+    std::cout << "Œrednia wa¿ona liczb wynosi: " << œrednialiczb <<"\n";
 
 }
 
@@ -188,6 +215,7 @@ int main()
     //task5();
     //task6();
     //task7();
-    task8();
+    //task8();
+    //task9();
 
 }
