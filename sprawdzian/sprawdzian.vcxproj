@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{9d6d74a2-1db7-4234-8bf7-634ac5dfee2a}</ProjectGuid>
-    <RootNamespace>if</RootNamespace>
+    <ProjectGuid>{fcce02b9-5501-46e1-a293-12b09ff701ed}</ProjectGuid>
+    <RootNamespace>sprawdzian</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="if.cpp" />
+    <ClCompile Include="sprawdzian.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,41 +1,30 @@
-#include <iostream>
+ï»¿#include <iostream>
 using namespace std;
 
 /*
-6. Program sprawdzaj¹cy czy podana data jest poprawna (np. sprawdzaj¹c, czy dzieñ jest z zakresu od 1 do 31, miesi¹c od 1 do 12 itd.)
-7. Program wyœwietlaj¹cy odpowiedni komunikat w zale¿noœci od podanej temperatury (np. "ciep³o" dla temperatury powy¿ej 20 stopni Celsjusza, "ch³odno" dla temperatury poni¿ej 10 stopni Celsjusza itd.)
-8. Program sprawdzj¹cy czy podana liczba jest z przedia³u <1;15)
-9. Program sprawdzaj¹cy czy osoba jest pe³noletnia.
-10. Program, który sprawdzi czy z podanych d³ugoœci boków mo¿na zrobiæ trójk¹t.
+
+1.
+2. Program sprawdzajÄ…cy czy podana liczba jest dodatnia, ujemna czy rÃ³wna zero
+3. Program sprawdzajÄ…cy czy podany rok jest rokiem przestÄ™pnym
+4. Program wyÅ›wietlajÄ…cy odpowiedni komunikat w zaleÅ¼noÅ›ci od podanej oceny (np. "bardzo dobry" dla oceny 5, "dobry" dla oceny 4 itd.)
+5. Program sprawdzajÄ…cy czy podane hasÅ‚o jest poprawne (np. jeÅ›li hasÅ‚o jest "abc123", program powinien wyÅ›wietliÄ‡ "hasÅ‚o poprawne", jeÅ›li jest inne, powinien wyÅ›wietliÄ‡ "hasÅ‚o niepoprawne").
+6. Program sprawdzajÄ…cy czy podana data jest poprawna (np. sprawdzajÄ…c, czy dzieÅ„ jest z zakresu od 1 do 31, miesiÄ…c od 1 do 12 itd.)
+7. Program wyÅ›wietlajÄ…cy odpowiedni komunikat w zaleÅ¼noÅ›ci od podanej temperatury (np. "ciepÅ‚o" dla temperatury powyÅ¼ej 20 stopni Celsjusza, "chÅ‚odno" dla temperatury poniÅ¼ej 10 stopni Celsjusza itd.)
+8. Program sprawdzjÄ…cy czy podana liczba jest z przediaÅ‚u <1;15)
+9. Program sprawdzajÄ…cy czy osoba jest peÅ‚noletnia.
+10. Program, ktÃ³ry sprawdzi czy z podanych dÅ‚ugoÅ›ci bokÃ³w moÅ¼na zrobiÄ‡ trÃ³jkÄ…t.
+11. Napisz program, ktÃ³ry bÄ™dzie dziaÅ‚aÄ‡ jako prosty kalkulator matematyczny, umoÅ¼liwiajÄ…c uÅ¼ytkownikowi wybÃ³r operacji (dodawanie, odejmowanie, mnoÅ¼enie, dzielenie) i wprowadzanie liczb do obliczeÅ„.
+12. Napisz program, ktÃ³ry wczyta numer miesiÄ…ca i wyÅ›wietli jego sÅ‚owny odpowiednik.
+13. Napisz program, ktÃ³ry na podstawie wspÃ³Å‚czynnikÃ³w rÃ³wnania kwadratowego (a, b, c) sprawdzi, czy to rÃ³wnanie ma rozwiÄ…zania rzeczywiste, i jeÅ›li tak, to je obliczy.
+
 */
 
 
-//Napisz funkcjê, która podzieli dwie liczby.
-void task0()
-{
-    int firstNumber, secondNumber;
-
-    cout << "Podaj pierwsz¹ liczbê:\n";
-    cin >> firstNumber;
-    cout << "Podaj drug¹ liczbê (byle nie zero):\n";
-    cin >> secondNumber;
-
-    if (secondNumber != 0)
-    {
-        double quotient = firstNumber / secondNumber;
-        cout << "Wynik dzielenia: " << quotient << "\n";
-    }
-    else
-    {
-        cout << "Dzielenie przez zero!!!\n";
-    }
-}
-
-//Program sprawdzaj¹cy czy podana liczba jest parzysta czy nieparzysta
+//Program sprawdzajÄ…cy czy podana liczba jest dodatnia, ujemna czy rÃ³wna zero
 void task1()
 {
     int Number;
-    cout << "Podaj liczbê:\n";
+    cout << "Podaj liczba:\n";
     cin >> Number;
     double endNumber = Number & 2;
     if (endNumber == 0) {
@@ -47,21 +36,40 @@ void task1()
     }
 
 }
+//Program sprawdzajÄ…cy czy podany rok jest rokiem przestÄ™pnym
 void task2()
 {
     int Number;
-    cout << "Podaj liczbê:\n";
+    cout << "Podaj liczbe:\n";
     cin >> Number;
     double endNumber = Number & 4;
     if (endNumber == 0) {
 
-        cout << "Rok jest przestêpny";
+        cout << "Rok jest przestepny";
     }
     else {
-        cout << "Rok jest nieprzestêpny";
+        cout << "Rok jest nieprzestepny";
     }
 
 }
+//Program sprawdzajÄ…cy czy podany rok jest rokiem przestÄ™pnym
+void task3() 
+{
+    int rok ,test;
+
+    std::cout << "Podaj rok: ";
+    std::cin >> rok;
+
+    test = rok & 4;
+    if (test == 0) {
+        cout << "Rok jest przestÄ™pny";
+    }
+    else {
+        cout << "Rok jest nieprzestÄ™pny";
+    }
+    
+    }
+
 void task4()
 {
     int Number;
@@ -73,7 +81,7 @@ void task4()
     }
     if (Number == 2) {
 
-        cout << "Dopuszczaj¹cy";
+        cout << "Dopuszczajacy";
     }
     if (Number == 3) {
 
@@ -89,51 +97,11 @@ void task4()
     }
     if (Number == 6) {
 
-        cout << "Celuj¹cy";
+        cout << "Celujacy";
     }
 }
+
 void task5()
-{
-    char haslo = "abc123";
-    cout << "Podaj has³o:\n";
-    char input;
-    cin >> input;
-
-    if (input = haslo) {
-
-        cout << "Haslo jest poprawne";
-    }
-    else {
-        cout << "Haslo nie jest poprawne";
-    }
-}
-
-//Program sprawdzaj¹cy czy podana liczba jest dodatnia, ujemna czy równa zero
-void task3()
-{
-    double NumberToCheck;
-
-    std::cout << "Podaj liczbê ktora chcesz sprawdzic:\n";
-    std::cin >> NumberToCheck;
-
-    if (NumberToCheck < 0)
-    {
-        std::cout << "Liczba (" << NumberToCheck << ") jest ujemna";
-    }
-    else if (NumberToCheck > 0)
-    {
-        std::cout << "Liczba (" << NumberToCheck << ") jest dodatnia";
-    }
-    else
-    {
-        std::cout << "Liczba (" << NumberToCheck << ") jest rowna 0";
-    }
-}
-
-
-
-//Program sprawdzaj¹cy czy podane has³o jest poprawne (np. jeœli has³o jest "abc123", program powinien wyœwietliæ "has³o poprawne", jeœli jest inne, powinien wyœwietliæ "has³o niepoprawne").
-void task6()
 {
     int password;
 
@@ -146,10 +114,10 @@ void task6()
     }
     else
     {
-        std::cout << "has³o niepoprawne";
+        std::cout << "haslo niepoprawne";
     }
 }
-//Program sprawdzaj¹cy czy podana data jest poprawna (np. sprawdzaj¹c, czy dzieñ jest z zakresu od 1 do 31, miesi¹c od 1 do 12 itd.)
+
 void task7()
 {
     int day, month, year;
@@ -181,7 +149,7 @@ void task7()
     {
         std::cout << "poprawna data\n";
     }
-}//Program wyœwietlaj¹cy odpowiedni komunikat w zale¿noœci od podanej temperatury (np. "ciep³o" dla temperatury powy¿ej 20 stopni Celsjusza, "ch³odno" dla temperatury poni¿ej 10 stopni Celsjusza itd.)
+}
 void task8()
 {
     double temp;
@@ -204,13 +172,13 @@ void task8()
         std::cout << "zimno";
     }
 }
-//8. Program sprawdzj¹cy czy podana liczba jest z przedia³u <1;15)
+
 void task9()
 {
     int number;
     std::cout << "podaj liczbe:\n";
     std::cin >> number;
-    if (number >= 1 && number < if (number >= 1 && number < 15)
+    if (number >= 1 && number <15)
     {
         std::cout << "podana liczba jest z przedzialu <1;15)";
     }
@@ -220,7 +188,7 @@ void task9()
 
     }
 }
-//9. Program sprawdzaj¹cy czy osoba jest pe³noletnia.
+
 void task10()
 {
     int age;
@@ -236,7 +204,7 @@ void task10()
 
     }
 }
-//10. Program, który sprawdzi czy z podanych d³ugoœci boków mo¿na zrobiæ trójk¹t.
+
 void task11()
 {
     int side1, side2, base;
@@ -255,6 +223,68 @@ void task11()
         std::cout << "z tych bokow nie mozna zrobic trojkata";
     }
 }
+//Napisz program, ktÃ³ry wczyta numer miesiÄ…ca i wyÅ›wietli jego sÅ‚owny odpowiednik
+void task12() {
+
+    int miesiac;
+
+    cout << "Wpisz miesiac:" << endl;
+    cin >> miesiac;
+
+    switch (miesiac) {
+    case 1:
+        cout << "Jest styczen";
+            break;
+    case 2:
+        cout << "Jest luty";
+        break;
+
+    case 3:
+        cout << "Jest marzec";
+        break;
+
+    case 4:
+        cout << "Jest kwiecien";
+        break;
+
+    case 5:
+        cout << "Jest maj";
+        break;
+
+    case 6:
+        cout << "Jest czerwiec";
+        break;
+
+    case 7:
+        cout << "Jest lipiec";
+        break;
+
+    case 8:
+        cout << "Jest spierpien";
+        break;
+
+    case 9:
+        cout << "Jest wrzesien";
+        break;
+
+    case 10:
+        cout << "Jest pazdziernik";
+        break;
+
+    case 11:
+        cout << "Jest listopad";
+        break;
+
+    case 12:
+        cout << "Jest grudzien";
+        break;
+    }
+}
+
+void task13() 
+{
+    int;
+}
 int main()
 {
     setlocale(LC_CTYPE, "polish");
@@ -270,5 +300,6 @@ int main()
     //task9();
     //task10();
     //task11();
-
+    //task12();
+    //task13();
 }
