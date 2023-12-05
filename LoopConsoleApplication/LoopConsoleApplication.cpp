@@ -29,160 +29,80 @@ FOR
 
 */
 
-//Napisz program, który pobiera od uzytkownika liczbę dopóki będzie ona różna od zera
 #include <iostream>
+#include <string>
+using namespace std;
+
 
 void task1()
 {
-	int number;
+	double numberFromUser;
+
 	do
 	{
-		std::cout << "Podaj liczbę\n";
-		std::cin >> number;
-	} while (number != 0);
+		cout << "Enter the number: " << endl;
+		cin >> numberFromUser;
+	} while (numberFromUser != 0);
+	cout << "The number equals 0. " << endl;
 }
-
-//Napisz program, który obliczy NWD dwóch liczb
 void task2()
 {
-	int a, b;
-	std::cout << "Podaj a\n";
-	std::cin >> a;
-	std::cout << "Podaj b\n";
-	std::cin >> b;
+	int firstNumberFromUser;
+	int secondNumberFromUser;
 
-	/*if (b != 0)
+	cout << "Enter first number: " << endl;
+	cin >> firstNumberFromUser;
+	cout << "Enter second number: " << endl;
+	cin >> secondNumberFromUser;
+
+	while (firstNumberFromUser > 0 && secondNumberFromUser > 0)
 	{
-		int tmp = b;
-		b = a % b;
-		a = tmp;
-		if (b != 0)
+
+		if (firstNumberFromUser == secondNumberFromUser)
 		{
-			int tmp = b;
-			b = a % b;
-			a = tmp;
-			if (b != 0)
-			{
-				int tmp = b;
-				b = a % b;
-				a = tmp;
-				if (b != 0)
-				{
-					int tmp = b;
-					b = a % b;
-					a = tmp;
-					//....
-				}
-			}
+			cout << "Greatest common divisor of those two nubers is: " << firstNumberFromUser << endl;
+			return;
 		}
-	}*/
 
-	while (b != 0)
-	{
-		int tmp = b;
-		b = a % b;
-		a = tmp;
+		if (firstNumberFromUser > secondNumberFromUser)
+		{
+			firstNumberFromUser = firstNumberFromUser - secondNumberFromUser;
+		}
+		else
+		{
+			secondNumberFromUser = secondNumberFromUser - firstNumberFromUser;
+		}
 	}
-
-	/*for (; b != 0; )
-	{
-		int tmp = b;
-		b = a % b;
-		a = tmp;
-	}*/
-
-	std::cout << "NWD = " << a << "\n";
 }
 
-//Napisz program który wyświetli na ekranie kolejne liczby naturalne od 1 do n
 void task3()
 {
-	int number;
-	std::cout << "Podaj liczbę\n";
-	std::cin >> number;
-
-	if (number > 0)
-	{
-		std::cout << "1, ";
-		if (number > 1)
-		{
-			std::cout << "2, ";
-			if (number > 2)
-			{
-				std::cout << "3, ";
-				if (number > 3)
-				{
-					std::cout << "4, ";
-					if (number > 4)
-					{
-						std::cout << "5, ";
-						if (number > 5)
-						{
-							std::cout << "6, ";
-							//dalej kolejne
-						}
-					}
-				}
-			}
-		}
-	}
-
-	int i = 0;
-	while (number > i)
-	{
-		std::cout << (i + 1) << ", ";
-		i++;
-	}
-	std::cout << "\n";
-
-	for (int i = 0; number > i; i++)
-	{
-		std::cout << (i + 1) << ", ";
-	}
-	std::cout << "\n";
-}
-
-//Napisz program, który wylosuje liczbę a uzytkownik ma zgodnąć ją.
-void task4()
-{
-	srand(time(NULL));
-
-	int secretNumber = rand() % 10;
-
-	std::cout << "Zgadnij liczbe:\n";
-	int number;
-	std::cin >> number;
-	if (number != secretNumber)
-	{
-		std::cout << "Zgadnij liczbe:\n";
-		int number;
-		std::cin >> number;
-		if (number != secretNumber)
-		{
-			std::cout << "Zgadnij liczbe:\n";
-			int number;
-			std::cin >> number;
-			if (number != secretNumber)
-			{
-				std::cout << "Zgadnij liczbe:\n";
-				int number;
-				std::cin >> number;
-				if (number != secretNumber);
-
-			}
-		}
-	}
-
-	int number;
+	double sumOfNumbers = 0.0;
 	do
 	{
-		std::cout << "Zgadnij liczbe:\n";
-		std::cin >> number;
-	} while (number != secretNumber);
-	std::cout << "Gratulacje\n";
+		double numberFromUser;
+		cout << "Enter a number: " << endl;
+		cin >> numberFromUser;
+
+		sumOfNumbers = sumOfNumbers + numberFromUser;
+
+		if (numberFromUser == 0)
+		{
+			cout << "Sum of numbers is: " << sumOfNumbers;
+			return;
+		}
+	} while (true);
+}
+//* Program wyświetlający na ekranie kolejne liczby naturalne od 1 do 10
+void task4()
+{
+	for (int i = 1; i <= 10; i++)
+	{
+		cout << i << endl;
+	}
 }
 
-//Program obliczający sumę liczb od 1 do 100
+//* Program obliczający sumę liczb od 1 do 100
 void task5()
 {
 	int sum = 0;
@@ -190,161 +110,218 @@ void task5()
 	{
 		sum = sum + i;
 	}
-
-	std::cout << "Suma od 1  do 100 wynosi " << sum << "\n";
+	cout << sum << endl;
 }
 
-//Program wyświetlający na ekranie ciąg Fibonacciego do 20 elementu (ciąg Fibonacciego to ciąg gdzie każdy element jest sumą dwóch poprzednich, np. 0, 1, 1, 2, 3, 5, 8, 13 itd.)
+//*Program wyświetlający na ekranie kwadraty liczb od 1 do 10 (np. 1, 4, 9, 16 itd.)
 void task6()
 {
-	std::cout << "0 , 1, ";
-
-	int fib2 = 0;
-	int fib1 = 1;
-	for (int i = 0; i < 18; i++)
+	for (int i = 1; i < 10; i++)
 	{
-		int fib = fib2 + fib1;
-		std::cout << fib << ", ";
-		fib2 = fib1;
-		fib1 = fib;
+		double powerOfNumber = pow(i, 2);
+		cout << powerOfNumber << endl;
 	}
 }
-
-/*
-* Program, kóry wyświetli poniższe cztery zwory:
-	****       54321        121212        122333
-	***        65432        212121        223334444
-	**         76543        121212        333444455555
-	*          87654        212121        444455555666666
-*/
+//	* Program obliczający n!.
 void task7()
 {
-	int numberOfLines = 5;
-
-	//pierwsza
-	for (int lineNumber = 0; lineNumber < numberOfLines; lineNumber++)
+	int numberFromUser;
+	cout << "Enter number: " << endl;
+	cin >> numberFromUser;
+	int sum = 1;
+	for (int i = 1; i <= numberFromUser; i++)
 	{
-		for (int numberOfStar = 0; numberOfStar < numberOfLines - lineNumber; numberOfStar++)
-		{
-			std::cout << "*";
-		}
-		std::cout << "\n";
+		sum = sum * i;
 	}
-
-	for (int lineNumber = 0; lineNumber < numberOfLines; lineNumber++)
-	{
-		for (int numberOfStar = 0; numberOfStar <= lineNumber; numberOfStar++)
-		{
-			std::cout << "*";
-		}
-		std::cout << "\n";
-	}
-
-	//druga
-	for (int lineNumber = 0; lineNumber < numberOfLines; lineNumber++)
-	{
-		for (int number = lineNumber + 5; number > lineNumber; number--)
-		{
-			std::cout << number;
-		}
-		std::cout << "\n";
-	}
-
-	//trzecia
-	for (int lineNumber = 0; lineNumber < numberOfLines; lineNumber++)
-	{
-		for (int number = 0; number < 6; number++)
-		{
-			std::cout << (number + lineNumber) % 2 + 1;
-		}
-		std::cout << "\n";
-	}
-
-	//czwarta
-	for (int lineNumber = 0; lineNumber < numberOfLines; lineNumber++)
-	{
-		for (int number = lineNumber + 1; number <= lineNumber + 3; number++)
-		{
-			for (int i = 0; i < number; i++)
-				std::cout << number;
-		}
-		std::cout << "\n";
-	}
+	cout << "Factorial equals: " << sum << endl;
 }
-
-//Napisz program, który poprosi użytkownika o wprowadzenie dowolnej liczby całkowitej. Następnie program powinien obliczyć i wyświetlić liczbę cyfr.
+//Program wyświetlający na ekranie silnie z liczb od 1 do 10 (np. 1!, 2!, 3!, 4!itd.)
 void task8()
 {
-	int number = 11;
-
-	//wersja 1
-	int howManyDigits = 1;
-	int upperRange = 10;
-	number = abs(number);
-	while (number > upperRange)
+	int factorial = 1;
+	for (int i = 1; i <= 10; i++)
 	{
-		howManyDigits++;
-		upperRange *= 10;
+		factorial = factorial * i;
+		cout << "Factorials 1-10 equals: " << factorial << endl;
 	}
-	std::cout << howManyDigits << "\n";
-
-	//wersja 2
-	howManyDigits = 1;
-	int tmpNumber = abs(number);
-	while (tmpNumber > 10)
-	{
-		tmpNumber /= 10;
-		howManyDigits++;
-	}
-
-	std::cout << howManyDigits << "\n";
-
-	//wersja 3 ile cyfr binarnie
-	howManyDigits = 1;
-	tmpNumber = abs(number);
-	while (tmpNumber > 1)
-	{
-		tmpNumber >>= 1;
-		howManyDigits++;
-	}
-
-	std::cout << howManyDigits << "\n";
 }
-
-//Oblicz sumę szeregu 1/1^2 + 1/2^2 + 1/3^2 + ... +1/n^2. Jeżeli się nie pomylisz, to dla odpowiednio dużej wartości n po przemnożeniu jej przez 6 i spierwiastkowaniu powinieneś otrzymać wartość liczby π (suma szeregu jest równa π2/6). Zwróć uwagę, że pierwsza wartość indeksu to 1, a nie 0. Dokładność obliczeń można sprawdzić porównując z wartością odczytaną z własności Math.PI.
+//* Program wyświetlający na ekranie tabliczkę mnożenia od 1 do 9 (np. 1x1 = 1, 1x2 = 2, 1x3 = 3 itd.).
 void task9()
 {
-	double sum = 0;
-	int n = 2;
-	if (n > 1)
+
+	for (int i = 1; i <= 9; i++)
 	{
-		sum = sum + 1 / (1.0 * 1.0);
-		if (n > 2)
+		for (int j = 1; j <= 9; j++)
 		{
-			sum = sum + 1 / (2.0 * 2.0);
-			if (n > 3)
-			{
-				sum = sum + 1 / (3.0 * 3.0);
-				if (n > 4)
-				{
-					sum = sum + 1 / (4.0 * 4.0);
-					
-				}
-			}
+			cout << i << "*" << j << "=" << i * j << "  ";
+		}
+		cout << endl;
+	}
+}
+//*Program wyświetlający na ekranie wszystkie liczby podzielne przez 3 z zakresu od 1 do 100
+void task10()
+{
+	for (int i = 1; i <= 100; i++)
+	{
+		if (i % 3 == 0)
+		{
+			cout << i << endl;
 		}
 	}
-
-	double i = 1;
-	while (n > i)
-	{
-		sum = sum + 1 / (i * i);
-		i++;
-	}
-
-	std::cout << "Suma " << sum << "\n";
 }
+//*Program obliczający sumę kwadratów liczb od 1 do 10
+void task11()
+{
+	int sum = 0;
+	for (int i = 0; i <= 10; i++)
+	{
+		sum = sum + i * i;
+	}
+	cout << sum;
+}
+//* Napisz program, który policzy sumę cyfr podanej przez użytkownika liczby.
+void task12()
+{
+	double numberFromUser = 0;
+	double sum = 0;
+
+	do
+	{
+		cout << "Enter number: " << endl;
+		cin >> numberFromUser;
+		sum = sum + numberFromUser;
+		cout << "Sum: " << sum << endl;
+	} while (true);
+}
+// Program wyświetlający na ekranie kwadraty liczb od 1 do 10 (np. 1, 4, 9, 16 itd.) dopóki suma tych kwadratów nie przekroczy 1000.
+void task13()
+{
+	int sum = 0;
+	for (int i = 1; sum < 1000; i++)
+	{
+		if (i >= 10)
+		{
+			i = 1;
+		}
+		sum = sum + i * i;
+		cout << sum << endl;
+	}
+}
+//* Program, kóry wyświetli poniższe cztery wzory :
+// *
+// **
+// ***
+// ****
+// *****
+void task14()
+{
+	int numberFromUser = 0;
+	cout << "Enter number: " << endl;
+	cin >> numberFromUser;
+	for (int i = 0; i <= numberFromUser; i++)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			cout << "*";
+		}
+		cout << endl;
+	}
+}
+/* Napisz program, który poprosi użytkownika o wprowadzenie dowolnej liczby całkowitej.Następnie program powinien obliczyć i wyświetlić liczbę cyfr.
+*/
+void task15()
+{
+	int numberFromUser = 0;
+	cout << "Enter number from user: " << endl;
+	cin >> numberFromUser;
+	cout << to_string(numberFromUser).length();
+}
+//* Miasto T.ma obecnie 100 tys.mieszkańców, ale jego populacja rośnie co roku o 3 % rocznie.Miasto B.ma 300 tys.mieszkańców 
+// i ta liczba rośnie w tempie 2 % na rok.Wykonaj symulację prezentującą liczbę mieszkańców w obu miastach i zatrzymującą się, gdy liczba mieszkańców miasta T.przekroczy liczbę z miasta B.
+void task16()
+{
+	int firstCity = 100000;
+	int secondCity = 300000;
+
+	for (int i = 0; firstCity < secondCity; i++)
+	{
+		firstCity = firstCity * 1.03;
+		secondCity = secondCity * 1.02;
+		cout << firstCity << "  " << secondCity << endl;
+	}
+	cout << firstCity << "  " << secondCity << endl;
+}
+
+//Oblicz sumę szeregu 1 / 1 ^ 2 + 1 / 2 ^ 2 + 1 / 3 ^ 2 + ... + 1 / n ^ 2. 
+// Jeżeli się nie pomylisz, to dla odpowiednio dużej wartości n po przemnożeniu jej przez 6 i
+//  spierwiastkowaniu powinieneś otrzymać wartość liczby π(suma szeregu jest równa π2 / 6).Zwróć uwagę, że pierwsza wartość indeksu to 1, a nie 0. Dokładność obliczeń można sprawdzić porównując z wartością odczytaną z własności Math.PI.
+void task17()
+{
+	double sum = 0;
+	double numberFromUser = 0;
+	cout << "Enter number: " << endl;
+	cin >> numberFromUser;
+	for (int i = 1; i < numberFromUser; i++)
+	{
+		sum = sum + (1.0 / pow(i, 2));
+	}
+	cout << "Sum: " << sqrt(sum * 6) << endl;
+}
+
+void task18()
+{
+	int sizeOfPyramid = 0;
+	cout << "Enter number: " << endl;
+	cin >> sizeOfPyramid;
+	for (int row = 0; row < sizeOfPyramid; row++)
+	{
+
+		for (int spaces = 0; spaces < sizeOfPyramid - row - 1; spaces++)
+		{
+			cout << " ";
+
+		}
+		for (int stars = 0; stars <= row * 2; stars++)
+		{
+			cout << "*";
+		}
+		cout << endl;
+	}
+}
+
+/*DO - WHILE
+
+WHILE
+
+
+* Program sprawdzający czy podana liczba jest liczbą doskonałą(czyli taką, której suma dzielników(z wyłączeniem samej siebie) jest równa danej liczbie, np. 6 jest liczbą doskonałą, ponieważ 1 + 2 + 3 = 6).
+
+FOR
+* Program wyświetlający na ekranie ciąg Fibonacciego do 20 elementu(ciąg Fibonacciego to ciąg gdzie każdy element jest sumą dwóch poprzednich, np. 0, 1, 1, 2, 3, 5, 8, 13 itd.)
+
+
+
+*/
+
 
 int main()
 {
-	task9();
+	//task1();
+	//task2();
+	//task3();
+	//task4();
+	//task5();
+	//task6();
+	//task7();
+	//task8();
+	//task9();
+	//task10();
+	//task11();
+	//task12();
+	//task13();
+	//task14();
+	//task15();
+	//task16();
+	//task17();
+	task18();
 }
