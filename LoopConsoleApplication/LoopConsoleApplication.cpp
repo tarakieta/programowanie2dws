@@ -6,7 +6,7 @@ DO-WHILE
 
 WHILE
 * Miasto T. ma obecnie 100 tys. mieszkańców, ale jego populacja rośnie co roku o 3% rocznie. Miasto B. ma 300 tys. mieszkańców i ta liczba rośnie w tempie 2% na rok. Wykonaj symulację prezentującą liczbę mieszkańców w obu miastach i zatrzymującą się, gdy liczba mieszkańców miasta T. przekroczy liczbę z miasta B.
-* Napisz program, który poprosi użytkownika o wprowadzenie dowolnej liczby całkowitej. Następnie program powinien obliczyć i wyświetlić liczbę cyfr.
+*
 * Program sprawdzający czy podana liczba jest liczbą doskonałą (czyli taką, której suma dzielników (z wyłączeniem samej siebie) jest równa danej liczbie, np. 6 jest liczbą doskonałą, ponieważ 1 + 2 + 3 = 6).
 
 FOR
@@ -25,16 +25,12 @@ FOR
 	**         76543        121212        333444455555
 	*          87654        212121        444455555666666
 
-* Oblicz sumę szeregu 1/1^2 + 1/2^2 + 1/3^2 + ... +1/n^2. Jeżeli się nie pomylisz, to dla odpowiednio dużej wartości n po przemnożeniu jej przez 6 i spierwiastkowaniu powinieneś otrzymać wartość liczby π (suma szeregu jest równa π2/6). Zwróć uwagę, że pierwsza wartość indeksu to 1, a nie 0. Dokładność obliczeń można sprawdzić porównując z wartością odczytaną z własności Math.PI.
+*
 
 */
+
 //Napisz program, który pobiera od uzytkownika liczbę dopóki będzie ona różna od zera
-
-
-
 #include <iostream>
-
-
 
 void task1()
 {
@@ -153,7 +149,7 @@ void task4()
 
 	int secretNumber = rand() % 10;
 
-	/*std::cout << "Zgadnij liczbe:\n";
+	std::cout << "Zgadnij liczbe:\n";
 	int number;
 	std::cin >> number;
 	if (number != secretNumber)
@@ -171,11 +167,11 @@ void task4()
 				std::cout << "Zgadnij liczbe:\n";
 				int number;
 				std::cin >> number;
-				if (number != secretNumber)
-					....
+				if (number != secretNumber);
+
 			}
 		}
-	}*/
+	}
 
 	int number;
 	do
@@ -276,7 +272,79 @@ void task7()
 	}
 }
 
+//Napisz program, który poprosi użytkownika o wprowadzenie dowolnej liczby całkowitej. Następnie program powinien obliczyć i wyświetlić liczbę cyfr.
+void task8()
+{
+	int number = 11;
+
+	//wersja 1
+	int howManyDigits = 1;
+	int upperRange = 10;
+	number = abs(number);
+	while (number > upperRange)
+	{
+		howManyDigits++;
+		upperRange *= 10;
+	}
+	std::cout << howManyDigits << "\n";
+
+	//wersja 2
+	howManyDigits = 1;
+	int tmpNumber = abs(number);
+	while (tmpNumber > 10)
+	{
+		tmpNumber /= 10;
+		howManyDigits++;
+	}
+
+	std::cout << howManyDigits << "\n";
+
+	//wersja 3 ile cyfr binarnie
+	howManyDigits = 1;
+	tmpNumber = abs(number);
+	while (tmpNumber > 1)
+	{
+		tmpNumber >>= 1;
+		howManyDigits++;
+	}
+
+	std::cout << howManyDigits << "\n";
+}
+
+//Oblicz sumę szeregu 1/1^2 + 1/2^2 + 1/3^2 + ... +1/n^2. Jeżeli się nie pomylisz, to dla odpowiednio dużej wartości n po przemnożeniu jej przez 6 i spierwiastkowaniu powinieneś otrzymać wartość liczby π (suma szeregu jest równa π2/6). Zwróć uwagę, że pierwsza wartość indeksu to 1, a nie 0. Dokładność obliczeń można sprawdzić porównując z wartością odczytaną z własności Math.PI.
+void task9()
+{
+	double sum = 0;
+	int n = 2;
+	if (n > 1)
+	{
+		sum = sum + 1 / (1.0 * 1.0);
+		if (n > 2)
+		{
+			sum = sum + 1 / (2.0 * 2.0);
+			if (n > 3)
+			{
+				sum = sum + 1 / (3.0 * 3.0);
+				if (n > 4)
+				{
+					sum = sum + 1 / (4.0 * 4.0);
+					
+				}
+			}
+		}
+	}
+
+	double i = 1;
+	while (n > i)
+	{
+		sum = sum + 1 / (i * i);
+		i++;
+	}
+
+	std::cout << "Suma " << sum << "\n";
+}
+
 int main()
 {
-	task7();
+	task9();
 }
