@@ -6,11 +6,6 @@
 #include <stack>
 
 
-/*
-*
-* Program, który na wejœciu przyjmie rówanie w ONP a na wyjœciu wyœwietli wynik rówania.
-*/
-
 //*Napisz program, który bêdzie prosi³ o has³o.Nie przepuœci dalej dopóki nie zostanie ono podane prawid³owo.
 void task1()
 {
@@ -172,7 +167,7 @@ void task8()
 	std::stack<std::string>regularEquationONP;
 
 
-	//XDDDDDDDDDDDDDDDDD
+	
 	while (!reversedEquationONP.empty())
 	{
 		regularEquationONP.push(reversedEquationONP.top());
